@@ -12,7 +12,6 @@ body {
   max-width: 165px;
   object-fit: cover;
   object-position: left;
-  border: black 5px solid;
 }
 
 .container1 {
@@ -85,13 +84,21 @@ body {
   height: 900px;
 }
 
-.game-canvas {
-  grid-area: 2/4/9/119;
+#game-canvas {
+  display: grid;
+  background-color: white;
+  grid-template-columns: repeat(115, 10px);
+  grid-template-rows: repeat(5, 100px);
+  grid-area: 2/4/11/119;
+}
+
+.background {
+  grid-area: 1/1/5/119;
   background-color: blue;
 }
 
 .game-grass {
-  grid-area: 9/4/11/119;
+  grid-area: 5/1/6/119;
   background-color: blueviolet;
 }
 
@@ -113,4 +120,19 @@ body {
   align-self: center;
   text-align: center;
   margin-left: 50px;
+}
+
+#horses {
+  display: grid;
+
+  grid-template-columns: repeat(115, 10px);
+  grid-template-rows: repeat(5, 100px);
+  grid-area: 1/1/5/116;
+}
+.move-horses {
+  display: grid;
+  grid-area: 4/1/5/1;
+  background-color: black;
+  width: 50px;
+  height: 30px;
 }

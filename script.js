@@ -1,11 +1,11 @@
 //TRANSITION TO GAME FROM MENU
-// const playButton = document.getElementById("play-button");
+const playButton = document.getElementById("play-button");
 
-// function changePage() {
-//   document.querySelector(".container1").style.display = "none";
-//   document.querySelector(".container2").style.display = "";
-// }
-// playButton.addEventListener("click", changePage);
+function changePage() {
+  document.querySelector(".container1").style.display = "none";
+  document.querySelector(".container2").style.display = "";
+}
+playButton.addEventListener("click", changePage);
 //need to set rule if no horses selected = doesnt work,  if horse selected = work
 
 //HORSE CLASS
@@ -101,8 +101,24 @@ function addHorseImg() {
     horseElement[i].appendChild(horseImg);
     console.log(randomImg);
   }
-}
+} //random images for each character
 addHorseImg();
 
-const horse1Display = document.getElementsByClassName("horse1-button");
-horse1Display.innerHTML = sixHorsesSelected[0];
+const horseDisplay = document.getElementsByClassName("horse");
+
+let selectedHorse = null; // To keep track of the currently selected horse
+
+function selectCharacter() {
+  if (selectedHorse) {
+    selectedHorse.style.border = 0;
+  }
+
+  this.style.border = "5px solid red";
+  selectedHorse = this;
+}
+
+for (let i = 0; i < 6; i++) {
+  let chosenHorse = horseDisplay[i];
+  chosenHorse.style.boxSizing = "border-box";
+  chosenHorse.addEventListener("click", selectCharacter);
+}
