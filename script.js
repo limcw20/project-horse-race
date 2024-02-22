@@ -1,12 +1,13 @@
 //TRANSITION TO GAME FROM MENU
-/*const playButton = document.getElementById("play-button");
+// const playButton = document.getElementById("play-button");
 
-function changePage() {
-  document.querySelector(".container1").style.display = "none";
-  document.querySelector(".container2").style.display = "";
-}
-playButton.addEventListener("click", changePage);
-*/
+// function changePage() {
+//   document.querySelector(".container1").style.display = "none";
+//   document.querySelector(".container2").style.display = "";
+// }
+// playButton.addEventListener("click", changePage);
+//need to set rule if no horses selected = doesnt work,  if horse selected = work
+
 //HORSE CLASS
 class Horse {
   constructor(horseName, horseNumber, horseSpeed, horseDesc) {
@@ -84,8 +85,24 @@ function randomizeSix(list) {
 }
 
 function getHorses(list) {
-  return [...list].sort(() => (Math.random() > 0.5 ? 1 : -1)).slice(0, 6);
+  return [...list].sort(() => (Math.random() > 0.5 ? 1 : -1)).slice(0, 6); //shallow copy to an array of 6 random horses
 }
 
 const sixHorsesSelected = getHorses(listofHorses); //six horses selected put into variable
 //console.log(sixHorsesSelected);
+
+function addHorseImg() {
+  const horseElement = document.getElementsByClassName("horse");
+  for (let i = 0; i < 6; i++) {
+    const horseImg = document.createElement("img");
+    horseImg.classList.add("randomImg");
+    const randomImg = Math.floor(Math.random() * 2) + 1;
+    horseImg.src = "/images/" + randomImg + ".jpg";
+    horseElement[i].appendChild(horseImg);
+    console.log(randomImg);
+  }
+}
+addHorseImg();
+
+const horse1Display = document.getElementsByClassName("horse1-button");
+horse1Display.innerHTML = sixHorsesSelected[0];
