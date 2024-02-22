@@ -89,4 +89,13 @@ img {
   background-color: red;
 }
 
+.cheer-button {
+  grid-area: 12/2/15/3;
+  background-color: white;
+  width: 150px;
+  height: 75px;
+  align-self: center;
+  text-align: center;
+  margin-left: 50px;
+}
 /* rearrange row numbers to grid nicely the rank and overall layout */
