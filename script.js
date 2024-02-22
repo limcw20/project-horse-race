@@ -16,8 +16,11 @@ class Horse {
   }
 }
 //timeTaken = adds/subtract the time taken for horse to reach the end?
+//idea setInterval to change by 100
+//function to convert speed to interval 2000-1200 = 800ms
+//                                      2000-800 = 1200ms
 
-let horse1 = new Horse("Betty", "49", 120, "snail-imitator");
+let horse1 = new Horse("Betty", "49", 1200, "snail-imitator");
 // let arr = []
 // arr.push(horse1)
 
