@@ -1,17 +1,14 @@
-//Root of Horses
-const horses = [];
-
 //Root of Player selection
 let playerChoice = -1;
 
 //Root of Play Button Transitioning
-const playButton = document.getElementById("play-button");
+// const playButton = document.getElementById("play-button");
 
-function changePage() {
-  document.querySelector(".container1").style.display = "none";
-  document.querySelector(".container2").style.display = "";
-}
-playButton.addEventListener("click", changePage);
+// function changePage() {
+//   document.querySelector(".container1").style.display = "none";
+//   document.querySelector(".container2").style.display = "";
+// }
+// playButton.addEventListener("click", changePage);
 
 //Constructor() of Horse class (all 20)
 class Horse {
@@ -95,8 +92,25 @@ function getHorses(list) {
   return [...list].sort(() => (Math.random() > 0.5 ? 1 : -1)).slice(0, 6);
 }
 
-//Push Array of 6 random horses to root horses Array
-horses.push(getHorses(listofHorses));
+//Assign horses Array of 6 random horses
+const horses = getHorses(listofHorses);
 
 //Check if root Horses has captured 6 random horses
-console.log(horses);
+console.log(horses[0]);
+
+//For loop to grab image from Array of 6 horses and place <img> into each horse div class
+function addHorseImg(arr) {
+  let horseElement = document.getElementsByClassName("A-horse");
+  for (let i = 0; i < arr.length; i++) {
+    const horseImgTag = document.createElement("img");
+    horseImgTag.src = arr[i].horseImg;
+    horseElement[i].appendChild(horseImgTag);
+    console.log(horseElement);
+    console.log(arr);
+    console.log(arr[i]);
+    console.log(arr[i].horseImg);
+    console.log(horseImgTag);
+  }
+}
+
+addHorseImg(horses);

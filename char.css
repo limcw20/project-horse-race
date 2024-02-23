@@ -7,13 +7,6 @@ body {
   background-color: whitesmoke;
 }
 
-.randomImg {
-  height: 500px;
-  max-width: 165px;
-  object-fit: cover;
-  object-position: left;
-}
-
 .container1 {
   display: grid;
 
@@ -73,6 +66,13 @@ body {
 .horse6-button {
   grid-area: 1/ 17 /6 /19;
   background-color: pink;
+}
+
+.A-horse img {
+  height: 500px;
+  max-width: 165px;
+  object-fit: cover;
+  object-position: right;
 }
 
 .container2 {
